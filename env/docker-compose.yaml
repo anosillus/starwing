@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  jupyter:
+    container_name: starwing_jupyter_container
+    restart: always
+    build:
+      context: ./python_env
+    # runtime: nvidia
+    image: starwing_jupyter:v2
+    volumes:
+      - ./../main:/root/main
+      - ./../template:/root/template
+      - ./../playground:/root/playground
+      - ./../data:/root/data
+      - ./../src:/root/src
+      - ./../reports:/root/reports
+      - ./../docker_env/python_env:/root/env
+    ports:
+      - "8888:8888"
+    environment:
+      ROOT: "TRUE"
+      TZ: Asia/Tokyo
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+    command: "/opt/conda/bin/jupyter lab --notebook-dir=/root"

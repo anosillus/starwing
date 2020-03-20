@@ -1,0 +1,42 @@
+name: yolo
+channels:
+  - pytorch
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6.*
+  - easydict
+  - feather-format
+  - ipykernel
+  - ipywidgets
+  - matplotlib
+  - mypy
+  - numba
+  - numpy
+  - opencv=4.*
+  - pandas
+  - python-dotenv
+  - pyyaml
+  - records
+  - requests
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - statsmodels
+  - cudatoolkit=10.1.*
+  - pytorch
+  - torchvision
+  - opencv=4.*
+  - pillow=6.2.1 # for torchvision
+  - tqdm
+  - typing
+  - watermark
+  - pip:
+      # - imblearn
+      - japanize_matplotlib
+      - optuna
+      - plotly
+
+prefix: /opt/conda/envs/yolo
